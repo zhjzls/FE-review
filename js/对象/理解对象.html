@@ -22,6 +22,9 @@
             </ul>
             </p>
 
+
+        </li>
+        <li>
             <p>对象属性类型：
                 ECMAScript 中有两种属性：数据属性 和 访问器属性
             <ul>
@@ -37,7 +40,7 @@
                 </p>
             </ul>
             <ul>
-                访问器属性： 
+                访问器属性：
                 <li>[[Configurable]] </li>
                 <li>[[Enumerable]]</li>
                 <li>[[Get]] 读取属性时调用函数。 默认undefined</li>
@@ -46,7 +49,9 @@
                 <p>不一定非要同事指定getter 和 setter。 只指定 getter 时，代表 属性不能写入。 只指定setter函数的属性，会导致该属性不能读其属性值。</p>
             </ul>
             </p>
+            可以通过Object.defineProperties()同时定义多个属性。
         </li>
+        <li>读取属性的特性  Object.getOwnPropertyDescriptor() </li>
     </ol>
 </body>
 <script>
@@ -57,10 +62,10 @@
         }
         console.log('start', obj)
         Object.defineProperty(obj, 'musicName', {
-            set: function(newVal) {
+            set: function (newVal) {
                 return this.musicName + newVal
             },
-            get: function() {
+            get: function () {
                 return this.musicName
             }
         })

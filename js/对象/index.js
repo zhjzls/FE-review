@@ -1,7 +1,7 @@
 /*
  * @Author: darry
  * @Date: 2021-06-07 14:25:27
- * @LastEditTime: 2021-06-07 14:29:46
+ * @LastEditTime: 2021-06-07 17:51:10
  * @LastEditors: darry
  * @Description: 
  * @FilePath: \FE\js\对象\index.js
@@ -20,7 +20,8 @@ Object.defineProperties(book, {
         },
         set: function(v) {
             this._name = this._name + v
-        }
+        },
+        
     }
 })
 

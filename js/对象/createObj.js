@@ -62,11 +62,11 @@
 function Screen(brand, size, computers) {
     this.brand = brand;
     this.size = size,
-    this.computers = computers
+        this.computers = computers
 }
 Screen.prototype = {
     constructor: Screen,
-    showBrand: function() {
+    showBrand: function () {
         console.log(this.brand)
         return this.brand
     }
@@ -93,9 +93,22 @@ function Keyboard(size, brand, keys) {
     this.size = size;
     this.brand = brand;
     this.keys = keys;
-    if(typeof this.showKeysNum != 'function') {
-        Keyboard.prototype.showKeysNum = function() {
+    if (typeof this.showKeysNum != 'function') {
+        Keyboard.prototype.showKeysNum = function () {
             return this.keys.length;
         }
     }
+}
+
+// 寄生构造模式
+// 基本思想: 在函数内部创建一个对象， 为该对象增加属性方法，实例化的时候，返回该对象； 此时，该函数的作用，只是为了封装创建对象的代码；
+function Parent(name, age, childs) {
+    var o = new Object()
+    o.name = name;
+    o.age = age;
+    o.childs = childs;
+    o.showAge = function () {
+        return this.age
+    }
+    return o;
 }
