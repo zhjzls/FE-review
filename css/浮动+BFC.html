@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .img {
+        border: 1px sandybrown dashed;
+        width: 90px;
+        height: 60px;
+        float: left;
+    }
+
+    .content {
+        width: 200px;
+        height: 120px;
+        background-color: darkcyan;
+    }
+
+    .list ul {
+        background-color: darkcyan;
+        width: 600px;
+        padding: 10px;
+        /* overflow: hidden; */
+    }
+
+    ul::after {
+        content: ' ';
+        display: block;
+        clear: both;
+    }
+
+    .list li {
+        background-color: darkgrey;
+        float: left;
+        margin: 8px;
+        width: 120px;
+        height: 160px;
+    }
+
+    .list>div {
+        background-color: darksalmon;
+        width: 600px;
+    }
+</style>
+
+<body>
+    <h1>清楚浮动的3种方式</h1>
+    <ol>
+        <li>在浮动元素后面增加空标签，给空标签设置 `clear： both` 属性——增加了无意义标签</li>
+        <li>给浮动元素的父容器增加 `overflow：hidden/auto`属性——影响父容器内其他元素的position定位</li>
+        <li>给父元素设置伪类，并设置`clear: both`属性</li>
+    </ol>
+    <div id="app">
+        <img class="img" src="./demo.gif" alt="">
+        <div class="content">浮动本来的意义
+            浮动的意义原本仅是用来让文字环绕在图片周围而已。</div>
+    </div>
+    <hr />
+    <div class="list">
+        <ul>
+            ul本体
+            <li>child1</li>
+            <li>child2</li>
+            <li>child3</li>
+            <!-- <div style="clear:both;"></div> -->
+        </ul>
+        <div>
+            有序列表之外
+        </div>
+    </div>
+</body>
+
+</html>
